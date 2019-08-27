@@ -1,5 +1,5 @@
 {
-  "name": "zkouska",
+  "name": "Astronauts",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "cd client && npm run build"
+    "start": "concurrently \"cd client && npm start\""
   },
   "keywords": [],
   "author": "",
