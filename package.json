@@ -9,7 +9,6 @@
   "devDependencies": {},
   "scripts": {
     "start": "concurrently \"cd client && npm start\"",
-    "start:prod": "cd client && npm start:prod"
   },
   "keywords": [],
   "author": "",
