@@ -9,8 +9,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "cd server && node index.js",
-    "server": "cd server && node index.js",
-    "client": "npm start --prefix client"
+    "server": "cd server && node index.js"
   },
   "keywords": [],
   "author": "",
