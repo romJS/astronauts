@@ -9,7 +9,6 @@
   "devDependencies": {},
   "scripts": {
     "build": "concurrently \"cd client && npm run build\"",
-    "heroku-postbuild": "npm run build",
     "start": "concurrently \"cd client && PORT=3000 npm start\"",
     "start:prod": "cd server && npm start:prod"
   },
