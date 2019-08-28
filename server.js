@@ -58,7 +58,7 @@ app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 	
 // GET requests ----------------------------------------------------------------
 
-	app.get('/astronauts', (req, res) => {
+	app.get('/api', (req, res) => {
 		const { error } = validateGet(req.query);
 		if (error)
 		{
