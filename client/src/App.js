@@ -79,7 +79,7 @@ export default class App extends Component {
 
 // API actions --------------------------------------------------------
   getAstronauts() {
-      axios.get(this.URL + '/astronauts')
+      axios.get(this.URL + '/api')
           .then( response => {
               this.setState( {astronauts: response.data})
           });
