@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9bfc64-5f2f-45b5-ac7c-f392cdf15848" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/client/build/asset-manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/precache-manifest.64a15a9b347e878410832e3e5544f39d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/service-worker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/css/2.266e55a5.chunk.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/css/2.266e55a5.chunk.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/css/main.aca7f6da.chunk.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/css/main.aca7f6da.chunk.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.5a28450b.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.5a28450b.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.71fd8237.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.71fd8237.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/runtime~main.e38743dc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/static/js/runtime~main.e38743dc.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,14 +15,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
+            <state relative-caret-position="136">
               <caret line="101" column="23" lean-forward="true" selection-start-line="101" selection-start-column="23" selection-end-line="101" selection-end-column="23" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="89" column="42" lean-forward="true" selection-start-line="89" selection-start-column="42" selection-end-line="89" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -58,8 +48,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/client/package.json" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/client/src/App.js" />
+        <option value="$PROJECT_DIR$/server.js" />
       </list>
     </option>
   </component>
@@ -132,18 +122,18 @@
       <updated>1566972262158</updated>
       <workItem from="1566972264479" duration="8600000" />
       <workItem from="1566983322138" duration="12035000" />
-      <workItem from="1567008639082" duration="46000" />
+      <workItem from="1567008639082" duration="120000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20681000" />
+    <option name="totallyTimeSpent" value="20755000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -157,7 +147,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32900432" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32900432" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -236,23 +226,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="60" column="24" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/build/precache-manifest.b12f9939b9d90b1a5741c600943b7202.js" />
     <entry file="file://$PROJECT_DIR$/client/build/index.html" />
     <entry file="file://$PROJECT_DIR$/client/build/static/js/main.a99df690.chunk.js" />
     <entry file="file://$PROJECT_DIR$/client/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
+        <state relative-caret-position="136">
           <caret line="101" column="23" lean-forward="true" selection-start-line="101" selection-start-column="23" selection-end-line="101" selection-end-column="23" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="89" column="42" lean-forward="true" selection-start-line="89" selection-start-column="42" selection-end-line="89" selection-end-column="42" />
         </state>
       </provider>
     </entry>
