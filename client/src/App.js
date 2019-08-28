@@ -102,7 +102,7 @@ export default class App extends Component {
   updateAstronaut(id) {
       const {name, surname, birthdate, superpower} = this.state.astronautData;
 
-      axios.put(this.URL + '/astronauts' + this.state.astronautData.id,
+      axios.put(this.URL + '/astronauts/' + this.state.astronautData.id,
           {name, surname, birthdate, superpower})
           .then( response => this.getAstronauts() );
 
@@ -112,7 +112,7 @@ export default class App extends Component {
 
   deleteAstronaut(id) {
       if(window.confirm('Opravdu chcete tuto položku smazat?')) {
-          axios.delete(this.URL + '/astronauts' + id)
+          axios.delete(this.URL + '/astronauts/' + id)
               .then( response => this.getAstronauts() );
       }
   }

@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff9bfc64-5f2f-45b5-ac7c-f392cdf15848" name="Default Changelist" comment="" />
+    <list default="true" id="ff9bfc64-5f2f-45b5-ac7c-f392cdf15848" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/client/build/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/precache-manifest.64a15a9b347e878410832e3e5544f39d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/service-worker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/2.266e55a5.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/2.266e55a5.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/main.aca7f6da.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/main.aca7f6da.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.5a28450b.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.5a28450b.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.71fd8237.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.71fd8237.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/runtime~main.e38743dc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/runtime~main.e38743dc.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -12,12 +33,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1411">
-              <caret line="83" column="36" selection-start-line="83" selection-start-column="36" selection-end-line="83" selection-end-column="36" />
+            <state relative-caret-position="229">
+              <caret line="101" column="23" lean-forward="true" selection-start-line="101" selection-start-column="23" selection-end-line="101" selection-end-column="23" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -111,16 +132,18 @@
       <updated>1566972262158</updated>
       <workItem from="1566972264479" duration="8600000" />
       <workItem from="1566983322138" duration="12035000" />
+      <workItem from="1567008639082" duration="46000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20635000" />
+    <option name="totallyTimeSpent" value="20681000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -134,7 +157,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32900432" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32900432" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -145,34 +168,10 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/client/.gitignore" />
-    <entry file="file://$USER_HOME$/Documents/Astronauts/GitHub/server/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="24" selection-start-line="13" selection-start-column="4" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Procfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="32" selection-start-column="32" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/Astronauts/GitHub/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="85" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/Astronauts/GitHub/client/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="2" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Documents/Astronauts/GitHub/server/package.json" />
+    <entry file="file://$PROJECT_DIR$/Procfile" />
+    <entry file="file://$USER_HOME$/Documents/Astronauts/GitHub/package.json" />
+    <entry file="file://$USER_HOME$/Documents/Astronauts/GitHub/client/package.json" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -244,23 +243,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/build/precache-manifest.b12f9939b9d90b1a5741c600943b7202.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/build/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/build/static/js/main.a99df690.chunk.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5512" selection-start-column="5512" selection-end-column="5512" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/client/build/precache-manifest.b12f9939b9d90b1a5741c600943b7202.js" />
+    <entry file="file://$PROJECT_DIR$/client/build/index.html" />
+    <entry file="file://$PROJECT_DIR$/client/build/static/js/main.a99df690.chunk.js" />
     <entry file="file://$PROJECT_DIR$/client/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1411">
-          <caret line="83" column="36" selection-start-line="83" selection-start-column="36" selection-end-line="83" selection-end-column="36" />
+        <state relative-caret-position="229">
+          <caret line="101" column="23" lean-forward="true" selection-start-line="101" selection-start-column="23" selection-end-line="101" selection-end-column="23" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
