@@ -8,8 +8,10 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"cd client && npm start\""
+    "build": "concurrently \"cd client && npm run build\"",
+    "heroku-postbuild": "npm run build",
+    "start": "concurrently \"cd client && PORT=3000 npm start\"",
+    "start:prod": "cd server && npm start:prod"
   },
   "keywords": [],
   "author": "",
