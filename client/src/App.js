@@ -26,6 +26,7 @@ export default class App extends Component {
       editAstronautModal: false,
       }
 
+      this.URL = 'https://pure-retreat-56664.herokuapp.com';
       this.toggleNewAstronaut = this.toggleNewAstronaut.bind(this);
       this.toggleEditAstronaut = this.toggleEditAstronaut.bind(this);
       this.createAstronaut = this.createAstronaut.bind(this);
@@ -78,7 +79,7 @@ export default class App extends Component {
 
 // API actions --------------------------------------------------------
   getAstronauts() {
-      axios.get('http://localhost:3000/astronauts')
+      axios.get(this.URL + '/astronauts')
           .then( response => {
               this.setState( {astronauts: response.data})
           });
@@ -87,7 +88,7 @@ export default class App extends Component {
   createAstronaut() {
       const {name, surname, birthdate, superpower} = this.state.astronautData;
 
-      axios.post('http://localhost:3000/astronauts',{name, surname, birthdate, superpower})
+      axios.post(this.URL + '/astronauts',{name, surname, birthdate, superpower})
           .then( response => {
               const { astronauts }= this.state;
 
@@ -101,7 +102,7 @@ export default class App extends Component {
   updateAstronaut(id) {
       const {name, surname, birthdate, superpower} = this.state.astronautData;
 
-      axios.put('http://localhost:3000/astronauts/' + this.state.astronautData.id,
+      axios.put(this.URL + '/astronauts' + this.state.astronautData.id,
           {name, surname, birthdate, superpower})
           .then( response => this.getAstronauts() );
 
@@ -111,7 +112,7 @@ export default class App extends Component {
 
   deleteAstronaut(id) {
       if(window.confirm('Opravdu chcete tuto položku smazat?')) {
-          axios.delete('http://localhost:3000/astronauts/' + id)
+          axios.delete(this.URL + '/astronauts' + id)
               .then( response => this.getAstronauts() );
       }
   }
