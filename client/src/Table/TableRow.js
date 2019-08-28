@@ -12,13 +12,21 @@ export default class TableRow extends Component {
        this.props.onDeleteAstronaut(id);
     }
 
-    render() {
+    _formatDate(date) {
+        const d = new Date(date);
+        const year = d.getFullYear();
+        const month = d.getMonth() + 1;
+        const day = d.getDate();
+        return `${day}. ${month}. ${year}`;
+    }
 
+    render() {
+        const date = this._formatDate(this.props.birthdate);
         return (
             <tr>
                 <td>{this.props.name}</td>
                 <td>{this.props.surname}</td>
-                <td>{this.props.birthdate}</td>
+                <td>{date}</td>
                 <td>{this.props.superpower}</td>
                 <td>
                     <Button color="primary"
