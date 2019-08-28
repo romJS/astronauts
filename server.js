@@ -57,39 +57,39 @@ app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 	
 // GET requests ----------------------------------------------------------------
 
-	app.get('/astronauts', (req, res) => {
-        const { error } = validateGet(req.query);
-        if (error)
-        {
-            res.status(400).send(error.details[0].message);
-            return;
-        }
-
-        let dbQuery = Astronaut.find();
-
-        if (req.query.limit)
-            dbQuery = dbQuery.limit(req.query.limit);
-
-        dbQuery.then(astronauts => { res.json(astronauts); })
-            .catch(err => { res.status(400).send("Chyba požadavku na režiséry!"); });
-    });
-
-
-	app.get('/astronauts/:id', (req, res) => {
-		Astronaut.findById(req.params.id, (err, person) => {
-			if (err || !result)
-				res.status(404).send("Astronaut s daným ID nebyl nalezen.");
-			else
-				res.json(person);
-		});
-	});
 
 	if(process.env.NODE_ENV === "production") {
-	    app.use(express.static('client/build'));
+        app.use(express.static(path.resolve(__dirname, '../client/build')));
 
         app.get('/astronauts', (req, res) => {
-            res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-        })
+            const { error } = validateGet(req.query);
+            if (error)
+            {
+                res.status(400).send(error.details[0].message);
+                return;
+            }
+
+            let dbQuery = Astronaut.find();
+
+            if (req.query.limit)
+                dbQuery = dbQuery.limit(req.query.limit);
+
+            dbQuery.then(astronauts => { res.json(astronauts); })
+                .catch(err => { res.status(400).send("Chyba požadavku na režiséry!"); });
+        });
+
+
+        app.get('/astronauts/:id', (req, res) => {
+            Astronaut.findById(req.params.id, (err, person) => {
+                if (err || !result)
+                    res.status(404).send("Astronaut s daným ID nebyl nalezen.");
+                else
+                    res.json(person);
+            });
+        });
+        // app.get('/astronauts', (req, res) => {
+        //     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+        // })
     }
 
 // ---------------------------------------------------------------------------
