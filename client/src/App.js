@@ -26,7 +26,7 @@ export default class App extends Component {
       editAstronautModal: false,
       }
 
-      this.URL = 'http://localhost:3000';
+      this.URL = 'https://pure-retreat-56664.herokuapp.com';
       this.toggleNewAstronaut = this.toggleNewAstronaut.bind(this);
       this.toggleEditAstronaut = this.toggleEditAstronaut.bind(this);
       this.createAstronaut = this.createAstronaut.bind(this);
