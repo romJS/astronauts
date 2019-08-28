@@ -91,9 +91,6 @@ app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
                     res.json(person);
             });
         });
-        app.get('/astronauts', (req, res) => {
-            res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-        })
     }
 
 // ---------------------------------------------------------------------------
