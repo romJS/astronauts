@@ -56,7 +56,7 @@ export default class App extends Component {
 
 // -----------------------------------------------------------------
   handleChangeAstronautData(value, inputName, astronautType) {
-      const { astronautData }= this.state;
+      const { astronautData } = this.state;
       astronautData[inputName] = value;
       this.setState( {astronautData: astronautData});
   }
@@ -95,7 +95,7 @@ export default class App extends Component {
 
       axios.post(this.URL + '/astronauts',{name, surname, birthdate, superpower})
           .then( response => {
-              const { astronauts }= this.state;
+              const { astronauts } = this.state;
 
               astronauts.push(response.data);
 
