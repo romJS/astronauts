@@ -129,15 +129,3 @@ app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 			.catch(err => { res.send("Chyba při mazání astronauta!") });
 	});
 // -----------------------------------------------------------------------------
-
-async function save() {
-    const astronaut = new Astronaut({
-            "name": "Neil",
-            "surname": "Armstrong",
-            "birthdate": "2018-07-22",
-            "superpower": "Moon walking",
-        })
-
-    const result = await astronaut.save();
-    console.log(result.id);
-}
