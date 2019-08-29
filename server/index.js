@@ -34,8 +34,8 @@ app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 	function validateAstronaut(astronaut, reqired = true)
 	{
 		const schema = {
-			name:		Joi.string().min(2),
-			surname: 	Joi.string().min(2),
+			name:	    Joi.string().min(2),
+			surname:    Joi.string().min(2),
 			birthdate:  Joi.date(),
 			superpower: Joi.string()
 		};
@@ -46,12 +46,13 @@ app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 	function validateGet(getData)
 	{
 		const schema = {
-			limit: 		Joi.number().min(1),
-            name:		Joi.string().min(2),
-            surname: 	Joi.string().min(2),
-            birthdate:  Joi.date(),
-            superpower: Joi.string()
+			limit: 	    Joi.number().min(1),
+            		name:	    Joi.string().min(2),
+            		surname:    Joi.string().min(2),
+            		birthdate:  Joi.date(),
+            		superpower: Joi.string()
 		}
+		
 		return Joi.validate(getData, schema, { presence: "optional" });
 	}
 // -----------------------------------------------------------------------------
@@ -96,7 +97,7 @@ app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 
 // ---------------------------------------------------------------------------
 
-// POST requests -------------------------------------------------------------	
+// POST request -------------------------------------------------------------	
 	app.post('/astronauts', (req, res) => {
         const { error } = validateAstronaut(req.body);
         if (error) {
@@ -109,7 +110,7 @@ app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 	});
 // -----------------------------------------------------------------------------
 		
-// PUT requests ----------------------------------------------------------------
+// PUT request ----------------------------------------------------------------
 	app.put('/astronauts/:id', (req, res) => {
 		Astronaut.findByIdAndUpdate(req.params.id, req.body, { new: true})
 			.then(result => { res.json(result) })
@@ -117,7 +118,7 @@ app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 	});
 // -----------------------------------------------------------------------------
 
-// DELETE requests ------------------------------------------------------------------
+// DELETE request ------------------------------------------------------------------
 	app.delete('/astronauts/:id', (req, res) => {
 		Astronaut.findByIdAndDelete(req.params.id)
 			.then(result => {
