@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Table, Button } from 'reactstrap';
 
-import TableHead from "./Table/TableHead";
-import TableBody from "./Table/TableBody";
-import TableRow from './Table/TableRow';
-import ModalForm from './ModalForm/ModalForm';
+import TableHead from "./table/TableHead";
+import TableBody from "./table/TableBody";
+import TableRow from './table/TableRow';
+import ModalForm from './modalForm/ModalForm';
 
 
 export default class App extends Component {

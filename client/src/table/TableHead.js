@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 export default class TableHead extends  Component {
 
+    constructor(props) {
+        super(props)
+    }
+
     render() {
         return(
             <thead>
