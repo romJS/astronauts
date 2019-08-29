@@ -22,13 +22,14 @@ export default class App extends Component {
               superpower: ''
           },
 
-      newAstronautModal: false,
-      editAstronautModal: false,
+          newAstronautModal: false,
+          editAstronautModal: false
       };
 
       const LOCALHOST = 'http://localhost:3000';
       const HEROKU = 'https://pure-retreat-56664.herokuapp.com';
-      this.URL = HEROKU;
+      this.URL = LOCALHOST;
+
       this.toggleNewAstronaut = this.toggleNewAstronaut.bind(this);
       this.toggleEditAstronaut = this.toggleEditAstronaut.bind(this);
       this.createAstronaut = this.createAstronaut.bind(this);
@@ -83,7 +84,9 @@ export default class App extends Component {
   getAstronauts() {
       axios.get(this.URL + '/astronauts')
           .then( response => {
-              this.setState( {astronauts: response.data})
+              this.setState( (state, props) => ({
+                  astronauts: response.data
+              }));
           });
   }
 
@@ -140,8 +143,8 @@ export default class App extends Component {
               <h1 className="align-self-center">Astronauts</h1>
               <br />
               <Table>
-                  <TableHead/>
-                  <TableBody astronauts={astronauts} />
+                  <TableHead />
+                  <TableBody astronauts={astronauts}/>
               </Table>
 
               <div>
