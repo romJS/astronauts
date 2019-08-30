@@ -17,3 +17,12 @@ code {
   max-width: 1200px;
   margin: 40px auto;
 }
+
+.color-red {
+  color:red;
+}
+
+.message {
+  margin-right: 63px !important;
+  margin-bottom: 5px;
+}

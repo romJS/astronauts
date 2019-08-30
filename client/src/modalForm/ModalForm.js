@@ -30,12 +30,12 @@ export default class ModalForm extends React.Component {
                     <ModalBody>
                         <FormGroup>
                             <Label for="name">Name</Label>
-                            <Input type="text" name="name" id="name" value={this.props.state.astronautData.name} onChange={this.handleOnChange}/>
+                            <Input type="text" name="name" id="name" value={this.props.state.astronautData.name} onChange={this.handleOnChange} />
                         </FormGroup>
 
                         <FormGroup>
                             <Label for="name">Surname</Label>
-                            <Input type="text" name="surname" id="surname" value={this.props.state.astronautData.surname} onChange={this.handleOnChange}/>
+                            <Input type="text" name="surname" id="surname" value={this.props.state.astronautData.surname} onChange={this.handleOnChange} />
                         </FormGroup>
 
                         <FormGroup>
@@ -45,10 +45,11 @@ export default class ModalForm extends React.Component {
 
                         <FormGroup>
                             <Label for="name">Superpower</Label>
-                            <Input type="text" name="superpower" id="superpower" value={this.props.state.astronautData.superpower} onChange={this.handleOnChange}/>
+                            <Input type="text" name="superpower" id="superpower" value={this.props.state.astronautData.superpower} onChange={this.handleOnChange} />
                         </FormGroup>
                     </ModalBody>
                     <ModalFooter>
+                        <p className="color-red message">{this.props.message}</p>
                         <Button color="primary" onClick={this.handleClickSubmitButton}>{this.props.type}</Button>{' '}
                         <Button color="secondary" onClick={this.handleToggle}>Cancel</Button>
                     </ModalFooter>

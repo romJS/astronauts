@@ -21,6 +21,7 @@ export default class App extends Component {
               birthdate: '',
               superpower: ''
           },
+          message: '',
 
           newAstronautModal: false,
           editAstronautModal: false
@@ -28,7 +29,7 @@ export default class App extends Component {
 
       const LOCALHOST = 'http://localhost:3000';
       const HEROKU = 'https://pure-retreat-56664.herokuapp.com';
-      this.URL = LOCALHOST;
+      this.URL = HEROKU;
 
       this.toggleNewAstronaut = this.toggleNewAstronaut.bind(this);
       this.toggleEditAstronaut = this.toggleEditAstronaut.bind(this);
@@ -47,6 +48,7 @@ export default class App extends Component {
 // togglers --------------------------------------------------------
   toggleNewAstronaut() {
       this.setState( {newAstronautModal: !this.state.newAstronautModal} );
+      this._clearAstronautData();
   }
 
   toggleEditAstronaut() {
@@ -77,6 +79,7 @@ export default class App extends Component {
               birthdate: '',
               superpower: ''
           },
+          message: ''
       })
   }
 
@@ -101,6 +104,9 @@ export default class App extends Component {
 
               this.setState( { astronauts, newAstronautModal: !this.state.newAstronautModal } )
               this._clearAstronautData();
+          })
+          .catch(err => {
+              this.setState({message: 'Please fill in empty fields.'});
           });
   }
 
@@ -157,6 +163,7 @@ export default class App extends Component {
                     toggle={this.toggleNewAstronaut}
                     handleSubmitButton={this.createAstronaut}
                     handleUpdateData={this.handleChangeAstronautData}
+                    message={this.state.message}
                   />
 
                   <ModalForm
