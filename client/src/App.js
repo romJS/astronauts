@@ -29,10 +29,9 @@ export default class App extends Component {
 
       const LOCALHOST = 'http://localhost:3000';
       const HEROKU = 'https://pure-retreat-56664.herokuapp.com';
-      this.URL = HEROKU;
+      this.URL = LOCALHOST;
 
-      this.toggleNewAstronaut = this.toggleNewAstronaut.bind(this);
-      this.toggleEditAstronaut = this.toggleEditAstronaut.bind(this);
+      this.toggleModalForm = this.toggleModalForm.bind(this);
       this.createAstronaut = this.createAstronaut.bind(this);
       this.updateAstronaut = this.updateAstronaut.bind(this);
       this.deleteAstronaut = this.deleteAstronaut.bind(this);
@@ -40,30 +39,28 @@ export default class App extends Component {
       this.handleChangeAstronautData = this.handleChangeAstronautData.bind(this);
   }
 
-// lifecycle method
   componentDidMount() {
       this.getAstronauts();
   }
 
-// togglers --------------------------------------------------------
-  toggleNewAstronaut() {
-      this.setState( {newAstronautModal: !this.state.newAstronautModal} );
-      this._clearAstronautData();
-  }
+  toggleModalForm(type = false) {
+      if(!type)
+          this.setState( {newAstronautModal: !this.state.newAstronautModal} );
+      else
+          this.setState( { editAstronautModal: !this.state.editAstronautModal} );
 
-  toggleEditAstronaut() {
-      this.setState( { editAstronautModal: !this.state.editAstronautModal} );
       this._clearAstronautData();
   }
 
 // -----------------------------------------------------------------
-  handleChangeAstronautData(value, inputName, astronautType) {
+  handleChangeAstronautData(value, inputName) {
       const { astronautData } = this.state;
       astronautData[inputName] = value;
       this.setState( {astronautData: astronautData});
   }
 
-  handleEditAstronaut(id, name, surname, birthdate, superpower) {
+  handleEditAstronaut(props) {
+      const {id, name, surname, birthdate, superpower} = props;
       this.setState({
           astronautData: {id, name, surname, birthdate, superpower},
           editAstronautModal: !this.state.editAstronautModal
@@ -102,7 +99,7 @@ export default class App extends Component {
 
               astronauts.push(response.data);
 
-              this.setState( { astronauts, newAstronautModal: !this.state.newAstronautModal } )
+              this.setState( { astronauts, newAstronautModal: !this.state.newAstronautModal } );
               this._clearAstronautData();
           })
           .catch(err => {
@@ -154,16 +151,16 @@ export default class App extends Component {
               </Table>
 
               <div>
-                  <Button className="my-3" color="primary" onClick={this.toggleNewAstronaut}>Add astronaut</Button>
+                  <Button className="my-3" color="primary" onClick={() => this.toggleModalForm(false)}>Add astronaut</Button>
                   <ModalForm
                     header="Add astronaut"
                     type="Add"
                     modalState={this.state.newAstronautModal}
                     state={this.state}
-                    toggle={this.toggleNewAstronaut}
+                    toggle={this.toggleModalForm}
                     handleSubmitButton={this.createAstronaut}
                     handleUpdateData={this.handleChangeAstronautData}
-                    message={this.state.message}
+                    editMode={false}
                   />
 
                   <ModalForm
@@ -171,9 +168,10 @@ export default class App extends Component {
                       type="Update"
                       modalState={this.state.editAstronautModal}
                       state={this.state}
-                      toggle={this.toggleEditAstronaut}
+                      toggle={this.toggleModalForm}
                       handleSubmitButton={this.updateAstronaut}
                       handleUpdateData={this.handleChangeAstronautData}
+                      editMode={true}
                   />
               </div>
           </div>

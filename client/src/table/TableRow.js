@@ -4,12 +4,12 @@ import {Button} from "reactstrap";
 
 export default class TableRow extends Component {
 
-    handleEditClick(id, name, surname, birthdate, superpower) {
-        this.props.onEditAstronaut(id, name, surname, birthdate, superpower)
+    handleEditClick() {
+        this.props.onEditAstronaut(this.props)
     }
 
-    handleDeleteClick(id) {
-       this.props.onDeleteAstronaut(id);
+    handleDeleteClick() {
+       this.props.onDeleteAstronaut(this.props.id);
     }
 
     _formatDate(date) {
@@ -32,12 +32,12 @@ export default class TableRow extends Component {
                     <Button color="primary"
                             size="sm"
                             className="mr-2"
-                            onClick={this.handleEditClick.bind(this, this.props.id, this.props.name, this.props.surname, this.props.birthdate, this.props.superpower)}>
+                            onClick={this.handleEditClick.bind(this)}>
                             Edit
                     </Button>
                     <Button color="danger"
                             size="sm"
-                            onClick={this.handleDeleteClick.bind(this, this.props.id)}>
+                            onClick={this.handleDeleteClick.bind(this)}>
                             Delete
                     </Button>
                 </td>
