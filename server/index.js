@@ -73,7 +73,7 @@ app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 			dbQuery = dbQuery.limit(req.query.limit);
 
 		dbQuery.then(astronauts => { res.json(astronauts); })
-			.catch(err => { res.status(400).send("Chyba požadavku na režiséry!"); });
+			.catch(err => { res.status(400).send("Chyba požadavku na astronauty!"); });
 	});
 
 
