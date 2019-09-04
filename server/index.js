@@ -22,7 +22,7 @@ app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 	const astronautSchema = new mongoose.Schema({
 		name: String,
 		surname: String,
-		birthdate: String,
+		birthdate: Date,
 		superpower: String
 	});
 
@@ -46,7 +46,6 @@ app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 	function validateGet(getData)
 	{
 		const schema = {
-			limit: 	    Joi.number().min(1),
             		name:	    Joi.string().min(2),
             		surname:    Joi.string().min(2),
             		birthdate:  Joi.date(),
@@ -69,18 +68,15 @@ app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 
 		let dbQuery = Astronaut.find();
 
-		if (req.query.limit)
-			dbQuery = dbQuery.limit(req.query.limit);
-
 		dbQuery.then(astronauts => { res.json(astronauts); })
-			.catch(err => { res.status(400).send("Chyba požadavku na astronauty!"); });
+			.catch(err => { res.status(400).send("Request error!"); });
 	});
 
 
 	app.get('/astronauts/:id', (req, res) => {
 		Astronaut.findById(req.params.id, (err, person) => {
 			if (err || !result)
-				res.status(404).send("Astronaut s daným ID nebyl nalezen.");
+				res.status(404).send("Astronaut with given id not found!");
 			else
 				res.json(person);
 		});
@@ -105,7 +101,7 @@ app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
         } else {
             Astronaut.create(req.body)
                 .then(result => { res.json(result) })
-                .catch(err => { res.send("Nepodařilo se uložit astronauta")});
+                .catch(err => { res.send("Failed to save the astronaut!")});
 		}
 	});
 // -----------------------------------------------------------------------------
@@ -114,7 +110,7 @@ app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 	app.put('/astronauts/:id', (req, res) => {
 		Astronaut.findByIdAndUpdate(req.params.id, req.body, { new: true})
 			.then(result => { res.json(result) })
-			.catch(err => { res.send("Nepodařilo se upravit astronauta")});
+			.catch(err => { res.send("Failed to update the astronaut!")});
 	});
 // -----------------------------------------------------------------------------
 
@@ -125,8 +121,8 @@ app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 				if (result)
 					res.json(result);
 				else
-					res.status(404).send("Astronaut s daným id nebyl nalezen!");
+					res.status(404).send("Astronaut with given id not found!");
 			})
-			.catch(err => { res.send("Chyba při mazání astronauta!") });
+			.catch(err => { res.send("Error on delete the astronaut!") });
 	});
 // -----------------------------------------------------------------------------
