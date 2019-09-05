@@ -5,6 +5,7 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
+
 const PORT = process.env.PORT || 5000;
 const CONNECTION_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/tf_task";
 app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
@@ -31,7 +32,7 @@ app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 
 
 // Validation functions --------------------------------------------------------
-	function validateAstronaut(astronaut, reqired = true)
+	function validateAstronaut(astronaut, required = true)
 	{
 		const schema = {
 			name:	    Joi.string().min(2),
@@ -40,17 +41,17 @@ app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 			superpower: Joi.string()
 		};
 
-		return Joi.validate(astronaut, schema, { presence: (reqired) ? "required" : "opional" });
+		return Joi.validate(astronaut, schema, { presence: (required) ? "required" : "optional" });
     }
 
 	function validateGet(getData)
 	{
 		const schema = {
-            		name:	    Joi.string().min(2),
-            		surname:    Joi.string().min(2),
-            		birthdate:  Joi.date(),
-            		superpower: Joi.string()
-		}
+            name:	    Joi.string().min(2),
+            surname:    Joi.string().min(2),
+            birthdate:  Joi.date(),
+            superpower: Joi.string()
+		};
 		
 		return Joi.validate(getData, schema, { presence: "optional" });
 	}
@@ -59,29 +60,26 @@ app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 // GET requests ----------------------------------------------------------------
 
 	app.get('/astronauts', (req, res) => {
-		const { error } = validateGet(req.query);
-		if (error)
-		{
+	    const { error } = validateGet(req.query);
+		if (error) {
 			res.status(400).send(error.details[0].message);
-			return;
+		} else {
+            Astronaut.find()
+                .then(astronauts => { res.json(astronauts); })
+                .catch(err => { res.status(400).send("Request error!"); });
 		}
-
-		let dbQuery = Astronaut.find();
-
-		dbQuery.then(astronauts => { res.json(astronauts); })
-			.catch(err => { res.status(400).send("Request error!"); });
 	});
-
 
 	app.get('/astronauts/:id', (req, res) => {
-		Astronaut.findById(req.params.id, (err, person) => {
-			if (err || !result)
-				res.status(404).send("Astronaut with given id not found!");
-			else
-				res.json(person);
-		});
+        const { error } = validateGet(req.query);
+        if (error) {
+            res.status(400).send(error.details[0].message);
+        } else {
+            Astronaut.findById(req.params.id)
+                .then(astronaut => res.json(astronaut))
+                .catch(err => res.status(400).send("Astronaut with given id not found!"));
+		}
 	});
-
 
 	if(process.env.NODE_ENV === "production") {
 		app.use(express.static('../client/build'));
@@ -108,9 +106,14 @@ app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 		
 // PUT request ----------------------------------------------------------------
 	app.put('/astronauts/:id', (req, res) => {
-		Astronaut.findByIdAndUpdate(req.params.id, req.body, { new: true})
-			.then(result => { res.json(result) })
-			.catch(err => { res.send("Failed to update the astronaut!")});
+        const { error } = validateAstronaut(req.body, false);
+        if (error) {
+            res.status(400).send(error.details[0].message);
+        } else {
+            Astronaut.findByIdAndUpdate(req.params.id, req.body, { new: true})
+            	.then(result => { res.json(result) })
+                .catch(err => { res.send("Failed to update the astronaut!")});
+        }
 	});
 // -----------------------------------------------------------------------------
 
@@ -121,7 +124,7 @@ app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 				if (result)
 					res.json(result);
 				else
-					res.status(404).send("Astronaut with given id not found!");
+					res.status(404).send("The astronaut with given id not found!");
 			})
 			.catch(err => { res.send("Error on delete the astronaut!") });
 	});

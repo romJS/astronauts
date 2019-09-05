@@ -60,7 +60,8 @@ export default class App extends Component {
   }
 
   handleEditAstronaut(props) {
-      const {id, name, surname, birthdate, superpower} = props;
+      const { name, surname, birthdate, superpower} = props;
+      const id = props._id;
       this.setState({
           astronautData: {id, name, surname, birthdate, superpower},
           editAstronautModal: !this.state.editAstronautModal
@@ -83,11 +84,7 @@ export default class App extends Component {
 // API actions --------------------------------------------------------
   getAstronauts() {
       axios.get(this.URL + '/astronauts')
-          .then( response => {
-              this.setState( (state, props) => ({
-                  astronauts: response.data
-              }));
-          });
+          .then( response => this.setState( {astronauts: response.data} ));
   }
 
   createAstronaut() {
@@ -109,7 +106,6 @@ export default class App extends Component {
 
   updateAstronaut(id) {
       const {name, surname, birthdate, superpower} = this.state.astronautData;
-
       axios.put(this.URL + '/astronauts/' + this.state.astronautData.id,
           {name, surname, birthdate, superpower})
           .then( response => this.getAstronauts() );
@@ -119,7 +115,7 @@ export default class App extends Component {
   }
 
   deleteAstronaut(id) {
-      if(window.confirm('Opravdu chcete tuto položku smazat?')) {
+      if(window.confirm('Do you really want to delete the astronaut?')) {
           axios.delete(this.URL + '/astronauts/' + id)
               .then( response => this.getAstronauts() );
       }
@@ -130,11 +126,7 @@ export default class App extends Component {
           return (
               <TableRow
                   key={index + 1}
-                  id={astronaut._id}
-                  name={astronaut.name}
-                  surname={astronaut.surname}
-                  birthdate={astronaut.birthdate}
-                  superpower={astronaut.superpower}
+                  astronaut={astronaut}
                   onEditAstronaut={this.handleEditAstronaut}
                   onDeleteAstronaut={this.deleteAstronaut}
               />

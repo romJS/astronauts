@@ -5,11 +5,11 @@ import {Button} from "reactstrap";
 export default class TableRow extends Component {
 
     handleEditClick() {
-        this.props.onEditAstronaut(this.props)
+        this.props.onEditAstronaut(this.props.astronaut)
     }
 
     handleDeleteClick() {
-       this.props.onDeleteAstronaut(this.props.id);
+       this.props.onDeleteAstronaut(this.props.astronaut._id);
     }
 
     _formatDate(date) {
@@ -21,13 +21,14 @@ export default class TableRow extends Component {
     }
 
     render() {
-        const date = this._formatDate(this.props.birthdate);
+        const date = this._formatDate(this.props.astronaut.birthdate);
+        const {name, surname, superpower} = this.props.astronaut;
         return (
             <tr>
-                <td>{this.props.name}</td>
-                <td>{this.props.surname}</td>
+                <td>{name}</td>
+                <td>{surname}</td>
                 <td>{date}</td>
-                <td>{this.props.superpower}</td>
+                <td>{superpower}</td>
                 <td>
                     <Button color="primary"
                             size="sm"
