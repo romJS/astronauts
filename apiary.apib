@@ -1,0 +1,134 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# astronauts
+
+Simple astronauts API doc
+
+
+
+## Astronaut [/astronauts/{id}]
+
+A single Astronaut object, it represents an astronaut.
+
+Required attributes: 
+
+- `id`          Automatically assigned
+- `name`
+- `birthdate`
+- `superpower`
+
++ Parameters
+    + id (required, int) ... Unique astronaut ID in the form of an integer
+    
++ Model (application/json)
+
+    + Body
+
+            {
+                "id": 1,
+                "name": "Neil Armstrong",
+                "surname": "2015-08-05T08:40:51.620Z",
+                "birthdate": "1930-01-01",
+                "superpower": "Moon walking"
+            }
+
+### Retrieve a single Astronaut [GET]    
+
++ Response 200
+
+    [Astronaut][]
+    
++ Response 404 (application/json)
+
+        { 
+            "error": "Resource not found" 
+        }
+        
+
+### Edit an Astronaut [PUT]
+
++ Request 
+
+        {
+            "description": "A collection of health related projects",
+        }
+
++ Response 200
+    
+    [Astronaut][]
+
++ Response 404
+
+        { 
+            "error": "Resource not found"
+        }
+
++ Response 400
+
+        { 
+            "error": "Resource modification failed"
+        }
+            
+
+## Delete an Astronaut [DELETE]
+
++ Response 200
+
+        { 
+            "result": True
+        }
+        
+## Astronauts Collection [/astronauts]
+
+Get all astronauts
+
+### Retrieve all astronauts [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "name": "Neil",
+                "surname": "Armstrong",
+                "birthdate": "2018-07-22",
+                "superpower": "Moon walking"
+            },
+            {
+                "_id": 2,
+                "name": "Jurij",
+                "surname": "Gagarin",
+                "birthdate": "2019-08-04",
+                "superpower": "Space explorer"
+            }    
+        ]
+        
+### Create a New Astronaut [POST]
+
+
++ Request (application/json)
+
+        {
+            "id": 1,
+            "name": "Neil Armstrong",
+            "surname": "2015-08-05T08:40:51.620Z",
+            "birthdate": "1930-01-01",
+            "superpower": "Moon walking"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /astronauts/1
+
+    + Body
+
+            {
+                "id": 1,
+                "name": "Neil Armstrong",
+                "surname": "2015-08-05T08:40:51.620Z",
+                "birthdate": "1930-01-01",
+                "superpower": "Moon walking"
+            }
